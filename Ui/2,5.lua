@@ -596,12 +596,12 @@ function OrionLib:MakeWindow(WindowConfig)
 			Name = "TopBar"
 		}), {
 			-- AQUI adiciona o background primeiro pra ficar atrás de tudo
-			AddThemeObject(SetProps(MakeElement("ImageLabel"), {
+			AddThemeObject(SetProps(MakeElement("TImage"), {
 				Size = UDim2.new(1, 0, 1, 0),
 				BackgroundTransparency = 1,
-				Image = "rbxassetid://1234567890", -- coloca o ID da imagem aqui
+				Image = "rbxassetid://1234567890", -- ID da imagem
 				ScaleType = Enum.ScaleType.Stretch,
-				ZIndex = 1
+				ZIndex = 0
 			}), "Second"),
 		
 			WindowName,
