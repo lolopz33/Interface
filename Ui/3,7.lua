@@ -21,7 +21,8 @@ local OrionLib = {
 		    Text = Color3.fromRGB(255, 255, 255), -- Branco puro para destaque
 		    TextDark = Color3.fromRGB(200, 180, 255) -- Roxo claro suave
 		}
-	},
+		
+			},
 	SelectedTheme = "Default",
 	Folder = nil,
 	SaveCfg = false
