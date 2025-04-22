@@ -591,15 +591,15 @@ function OrionLib:MakeWindow(WindowConfig)
 		Position = UDim2.new(0, 0, 1, -1)
 	}), "Stroke")
 
-	local MainWindow = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 10), {
+	local MainWindow = SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 10), {
 		Parent = Orion,
 		Position = UDim2.new(0.5, -307, 0.5, -172),
 		Size = UDim2.new(0, 615, 0, 344),
 		ClipsDescendants = true
 	}), {
-		AddThemeObject(MakeElement("Stroke", Color3.fromRGB(60, 60, 60), 1.5), "Stroke"), -- <-- agora vai!
-		-- outros filhos aqui
-	}))
+		MakeElement("Stroke", Color3.fromRGB(255, 0, 0), 2), -- Bordona vermelha chamativa pra teste
+	})
+	
 	
 	
 		--SetProps(MakeElement("Image", "rbxassetid://3523728077"), {
