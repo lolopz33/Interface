@@ -601,6 +601,7 @@ function OrionLib:MakeWindow(WindowConfig)
 				BackgroundTransparency = 1,
 				Image = "rbxassetid://1234567890", -- ID da imagem
 				ScaleType = Enum.ScaleType.Stretch,
+				Transparency = 1
 				ZIndex = 0
 			}), "Second"),
 		
