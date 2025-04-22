@@ -605,7 +605,46 @@ function OrionLib:MakeWindow(WindowConfig)
 		Size = UDim2.new(0, 615, 0, 344),
 		ClipsDescendants = true
 	}), {
-
+		AddThemeObject(Create("UIStroke", {
+			Color = Color3.fromRGB(200, 0, 255),
+			Thickness = 4,
+			Transparency = 0.2
+		}), "Stroke"),
+	
+		SetChildren(SetProps(MakeElement("TFrame"), {
+			Size = UDim2.new(1, 0, 0, 50),
+			Name = "TopBar"
+		}), {
+			-- AQUI adiciona o background primeiro pra ficar atrás de tudo
+			AddThemeObject(SetProps(MakeElement("TImage"), {
+				Size = UDim2.new(1, 0, 1, 0),
+				BackgroundTransparency = 1,
+				Image = "rbxassetid://1234567890", -- ID da imagem
+				ScaleType = Enum.ScaleType.Stretch,
+				Transparency = 1
+				ZIndex = 0
+			}), "Second"),
+		
+			WindowName,
+			WindowTopBarLine,
+			-- o resto dos filhos
+			AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 7), {
+				Size = UDim2.new(0, 70, 0, 30),
+				Position = UDim2.new(1, -90, 0, 10)
+			}), {
+				AddThemeObject(MakeElement("Stroke"), "Stroke"),
+				AddThemeObject(SetProps(MakeElement("Frame"), {
+					Size = UDim2.new(0, 1, 1, 0),
+					Position = UDim2.new(0.5, 0, 0, 0)
+				}), "Stroke"),
+				CloseBtn,
+				MinimizeBtn
+			}), "Second"),
+		}),
+		DragPoint,
+		WindowStuff
+		}), "Main")
+		
 		SetChildren(SetProps(MakeElement("TFrame"), {
 			Size = UDim2.new(1, 0, 0, 50),
 			Name = "TopBar"
