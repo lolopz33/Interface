@@ -587,8 +587,8 @@ function OrionLib:MakeWindow(WindowConfig)
 	}), {
 		AddThemeObject(Create("UIStroke", {
 			Color = Color3.fromRGB(200, 0, 255),
-			Thickness = 3,
-			Transparency = 0.7
+			Thickness = 4,
+			Transparency = 1
 		}), "Stroke"),
 	
 		SetChildren(SetProps(MakeElement("TFrame"), {
