@@ -589,12 +589,27 @@ function OrionLib:MakeWindow(WindowConfig)
 		Position = UDim2.new(0, 0, 1, -1)
 	}), "Stroke")
 
-	local MainWindow = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 10), {
-		Parent = Orion,
-		Position = UDim2.new(0.5, -307, 0.5, -172),
-		Size = UDim2.new(0, 615, 0, 344),
-		ClipsDescendants = true
-	}), {
+    local MainWindow = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 10), {
+        Parent = Orion,
+        Position = UDim2.new(0.5, -307, 0.5, -172),
+        Size = UDim2.new(0, 615, 0, 344),
+        ClipsDescendants = true
+    }), {
+        -- Seus elementos filhos aqui (como TopBar, WindowStuff etc)
+    }), "Main")
+    
+    -- Glow neon roxo por fora
+    local Glow = Instance.new("ImageLabel")
+    Glow.Name = "NeonGlow"
+    Glow.BackgroundTransparency = 1
+    Glow.Image = "rbxassetid://4996891970"
+    Glow.ImageColor3 = Color3.fromRGB(255, 0, 255)
+    Glow.Size = UDim2.new(1, 40, 1, 40)
+    Glow.Position = UDim2.new(0, -20, 0, -20)
+    Glow.ZIndex = MainWindow.ZIndex - 1
+    Glow.Parent = MainWindow
+    
+
 		--SetProps(MakeElement("Image", "rbxassetid://3523728077"), {
 		--	AnchorPoint = Vector2.new(0.5, 0.5),
 		--	Position = UDim2.new(0.5, 0, 0.5, 0),
@@ -1711,3 +1726,6 @@ function OrionLib:Destroy()
 end
 
 return OrionLib
+
+
+--local MainWindow 
