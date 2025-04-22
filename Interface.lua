@@ -590,28 +590,22 @@ function OrionLib:MakeWindow(WindowConfig)
 	}), "Stroke")
 --////////////////////////////////////////////////////////////////////BGLH DIFERENTE ///////////////////////////////////////////////--
 
-local MainWindow = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 10), {
-	Parent = Orion,
-	Position = UDim2.new(0.5, -307, 0.5, -172),
-	Size = UDim2.new(0, 615, 0, 344),
-	ClipsDescendants = true
-}), {
-	--SetProps(MakeElement("Image", "rbxassetid://3523728077"), {
-	--	AnchorPoint = Vector2.new(0.5, 0.5),
-	--	Position = UDim2.new(0.5, 0, 0.5, 0),
-	--	Size = UDim2.new(1, 80, 1, 320),
-	--	ImageColor3 = Color3.fromRGB(33, 33, 33),
-	--	ImageTransparency = 0.7
-	--}),
-    --////////////////////////////////////////////////////////////////////BGLH DIFERENTE ///////////////////////////////////////////////--
+			local MainWindow = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 10), {
+				Parent = Orion,
+				Position = UDim2.new(0.5, -307, 0.5, -172),
+				Size = UDim2.new(0, 615, 0, 344),
+				ClipsDescendants = true
+			}), {
+				SetProps(MakeElement("Image", "rbxassetid://3523728077"), {
+					AnchorPoint = Vector2.new(0.5, 0.5),
+					Position = UDim2.new(0.5, 0, 0.5, 0),
+				Size = UDim2.new(1, 80, 1, 320),
+					ImageColor3 = Color3.fromRGB(33, 33, 33),
+				ImageTransparency = 0.7
+			}),
+		}), "Main")
 
-		--SetProps(MakeElement("Image", "rbxassetid://3523728077"), {
-		--	AnchorPoint = Vector2.new(0.5, 0.5),
-		--	Position = UDim2.new(0.5, 0, 0.5, 0),
-		--	Size = UDim2.new(1, 80, 1, 320),
-		--	ImageColor3 = Color3.fromRGB(33, 33, 33),
-		--	ImageTransparency = 0.7
-		--}),
+
 		SetChildren(SetProps(MakeElement("TFrame"), {
 			Size = UDim2.new(1, 0, 0, 50),
 			Name = "TopBar"
@@ -1698,7 +1692,7 @@ local MainWindow = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame",
 					Position = UDim2.new(0, 150, 0, 112),
 					Font = Enum.Font.Arcade
 				}), "Text"),
-				AddThemeObject(SetProps(MakeElement("Label", "This part of the script is locked to Sirius Premium users. Purchase Premium in the Discord server (discord.gg/sirius)", 12), {
+				AddThemeObject(SetProps(MakeElement("Label", "roblox", 12), {
 					Size = UDim2.new(1, -200, 0, 14),
 					Position = UDim2.new(0, 150, 0, 138),
 					TextWrapped = true,
@@ -1722,5 +1716,3 @@ end
 
 return OrionLib
 
-
---local MainWindow 
