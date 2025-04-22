@@ -14,12 +14,13 @@ local OrionLib = {
 	Flags = {},
 	Themes = {
 		Default = {
-			Main = Color3.fromRGB(25, 25, 25),
-			Second = Color3.fromRGB(32, 32, 32),
-			Stroke = Color3.fromRGB(60, 60, 60),
-			Divider = Color3.fromRGB(60, 60, 60),
-			Text = Color3.fromRGB(240, 240, 240),
-			TextDark = Color3.fromRGB(150, 150, 150)
+		Main = Color3.fromRGB(18, 18, 50), -- Azul bem escuro com um toque roxo
+		Second = Color3.fromRGB(30, 0, 60), -- Roxo profundo
+		Stroke = Color3.fromRGB(0, 255, 200), -- Verde água neon
+		Divider = Color3.fromRGB(120, 0, 180), -- Roxo vibrante
+		Text = Color3.fromRGB(255, 255, 255), -- Branco puro para destaque
+		TextDark = Color3.fromRGB(180, 180, 255) -- Azul claro suave
+
 		}
 	},
 	SelectedTheme = "Default",
@@ -27,7 +28,7 @@ local OrionLib = {
 	SaveCfg = false
 }
 
-
+--Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
 local Icons = {}
 
 local Success, Response = pcall(function()
@@ -47,7 +48,7 @@ local function GetIcon(IconName)
 end   
 
 local Orion = Instance.new("ScreenGui")
-Orion.Name = "33 Team"
+Orion.Name = "Orion"
 if syn then
 	syn.protect_gui(Orion)
 	Orion.Parent = game.CoreGui
@@ -77,7 +78,7 @@ function OrionLib:IsRunning()
 	end
 
 end
---TopBar
+
 local function AddConnection(Signal, Function)
 	if (not OrionLib:IsRunning()) then
 		return
@@ -595,19 +596,8 @@ function OrionLib:MakeWindow(WindowConfig)
 			Size = UDim2.new(1, 0, 0, 50),
 			Name = "TopBar"
 		}), {
-			-- AQUI adiciona o background primeiro pra ficar atrás de tudo
-			AddThemeObject(SetProps(MakeElement("TImage"), {
-				Size = UDim2.new(1, 0, 1, 0),
-				BackgroundTransparency = 1,
-				Image = "rbxassetid://1234567890", -- ID da imagem
-				ScaleType = Enum.ScaleType.Stretch,
-				Transparency = 1
-				ZIndex = 0
-			}), "Second"),
-		
 			WindowName,
 			WindowTopBarLine,
-			-- o resto dos filhos
 			AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 7), {
 				Size = UDim2.new(0, 70, 0, 30),
 				Position = UDim2.new(1, -90, 0, 10)
@@ -623,10 +613,9 @@ function OrionLib:MakeWindow(WindowConfig)
 		}),
 		DragPoint,
 		WindowStuff
-		}), "Main")
-		
+	}), "Main")
 	
---title bar
+
 	if WindowConfig.ShowIcon then
 		WindowName.Position = UDim2.new(0, 50, 0, -24)
 		local WindowIcon = SetProps(MakeElement("Image", WindowConfig.Icon), {
