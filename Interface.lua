@@ -588,7 +588,7 @@ function OrionLib:MakeWindow(WindowConfig)
 		Size = UDim2.new(1, 0, 0, 1),
 		Position = UDim2.new(0, 0, 1, -1)
 	}), "Stroke")
-
+--////////////////////////////////////////////////////////////////////BGLH DIFERENTE ///////////////////////////////////////////////--
     local MainWindow = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 10), {
         Parent = Orion,
         Position = UDim2.new(0.5, -307, 0.5, -172),
@@ -597,6 +597,16 @@ function OrionLib:MakeWindow(WindowConfig)
     }), {
         -- Seus elementos filhos aqui (como TopBar, WindowStuff etc)
     }), "Main")
+    
+    -- Fundo com imagem personalizada
+    local BackgroundImage = Instance.new("ImageLabel")
+    BackgroundImage.Name = "Background"
+    BackgroundImage.Image = "rbxassetid://13305983470" -- ID de uma imagem neon, você pode trocar
+    BackgroundImage.BackgroundTransparency = 1
+    BackgroundImage.Size = UDim2.new(1, 0, 1, 0)
+    BackgroundImage.Position = UDim2.new(0, 0, 0, 0)
+    BackgroundImage.ZIndex = 0
+    BackgroundImage.Parent = MainWindow
     
     -- Glow neon roxo por fora
     local Glow = Instance.new("ImageLabel")
@@ -608,7 +618,7 @@ function OrionLib:MakeWindow(WindowConfig)
     Glow.Position = UDim2.new(0, -20, 0, -20)
     Glow.ZIndex = MainWindow.ZIndex - 1
     Glow.Parent = MainWindow
-    
+    --////////////////////////////////////////////////////////////////////BGLH DIFERENTE ///////////////////////////////////////////////--
 
 		--SetProps(MakeElement("Image", "rbxassetid://3523728077"), {
 		--	AnchorPoint = Vector2.new(0.5, 0.5),
