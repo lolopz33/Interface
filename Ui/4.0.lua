@@ -26,55 +26,6 @@ local OrionLib = {
 	SaveCfg = false
 }
 
--- 🧊 Glassmorphism Patch
-local Lighting = game:GetService("Lighting")
-
--- Verifica se o efeito de desfoque já existe e destrói o anterior
-local existingBlur = Lighting:FindFirstChild("OrionGlassBlur")
-if existingBlur then
-	existingBlur:Destroy()  -- Remove o efeito anterior
-end
-
--- Cria um novo efeito de desfoque
-local GlassBlur = Instance.new("BlurEffect")
-GlassBlur.Name = "OrionGlassBlur"
-GlassBlur.Size = 12
-GlassBlur.Parent = Lighting
-
--- Definição do tema "Glass"
-OrionLib.Themes.Glass = {
-	Main = Color3.fromRGB(255, 255, 255),
-	Second = Color3.fromRGB(240, 240, 240),
-	Stroke = Color3.fromRGB(255, 255, 255),
-	Divider = Color3.fromRGB(230, 230, 230),
-	Text = Color3.fromRGB(20, 20, 20),
-	TextDark = Color3.fromRGB(100, 100, 100)
-}
-
--- Mudando o tema selecionado para "Glass"
-OrionLib.SelectedTheme = "Glass"
-
--- Função para aplicar o tema selecionado aos elementos
-local function applyTheme(themeName)
-	local theme = OrionLib.Themes[themeName]
-	if theme then
-		-- Aplicando as cores do tema aos elementos da interface
-		for _, element in pairs(OrionLib.Elements) do
-			if element:IsA("GuiObject") then
-				-- Alterando as propriedades de cor dos elementos
-				element.BackgroundColor3 = theme.Main
-				element.BorderColor3 = theme.Stroke
-				element.TextColor3 = theme.Text
-			end
-		end
-	else
-		warn("Tema não encontrado: " .. themeName)
-	end
-end
-
--- Aplicando o tema selecionado (no caso, "Glass")
-applyTheme(OrionLib.SelectedTheme)
-
 -- 🧊 Glassmorphism Patch  ▲▲▲
 
 
