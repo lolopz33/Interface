@@ -1,4 +1,5 @@
 
+
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
@@ -12,21 +13,20 @@ local OrionLib = {
 	Connections = {},
 	Flags = {},
 	Themes = {
-		Default = {
-			Main = Color3.fromRGB(28, 0, 60),
-			Second = Color3.fromRGB(50, 0, 100),
-			Stroke = Color3.fromRGB(150, 0, 255),
-			Divider = Color3.fromRGB(90, 0, 160),
-			Text = Color3.fromRGB(255, 255, 255),
-			TextDark = Color3.fromRGB(200, 180, 255)
+			Default = {
+		    Main = Color3.fromRGB(28, 0, 60), -- Roxo escuro intenso
+		    Second = Color3.fromRGB(50, 0, 100), -- Roxo profundo
+		    Stroke = Color3.fromRGB(150, 0, 255), -- Roxo vibrante (neon)
+		    Divider = Color3.fromRGB(90, 0, 160), -- Roxo suave com um toque de azul
+		    Text = Color3.fromRGB(255, 255, 255), -- Branco
+		    TextDark = Color3.fromRGB(200, 180, 255) -- Roxo claro suave
 		}
-	},
+		
+			},
 	SelectedTheme = "Default",
 	Folder = nil,
 	SaveCfg = false
 }
-
--- 🧊 Glassmorphism Patch  ▲▲▲
 
 
 local Icons = {}
