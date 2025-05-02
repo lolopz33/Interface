@@ -1,5 +1,4 @@
 
-
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
@@ -13,21 +12,37 @@ local OrionLib = {
 	Connections = {},
 	Flags = {},
 	Themes = {
-			Default = {
-		    Main = Color3.fromRGB(28, 0, 60), -- Roxo escuro intenso
-		    Second = Color3.fromRGB(50, 0, 100), -- Roxo profundo
-		    Stroke = Color3.fromRGB(150, 0, 255), -- Roxo vibrante (neon)
-		    Divider = Color3.fromRGB(90, 0, 160), -- Roxo suave com um toque de azul
-		    Text = Color3.fromRGB(255, 255, 255), -- Branco
-		    TextDark = Color3.fromRGB(200, 180, 255) -- Roxo claro suave
+		Default = {
+			Main = Color3.fromRGB(28, 0, 60),
+			Second = Color3.fromRGB(50, 0, 100),
+			Stroke = Color3.fromRGB(150, 0, 255),
+			Divider = Color3.fromRGB(90, 0, 160),
+			Text = Color3.fromRGB(255, 255, 255),
+			TextDark = Color3.fromRGB(200, 180, 255)
 		}
-		
-			},
+	},
 	SelectedTheme = "Default",
 	Folder = nil,
 	SaveCfg = false
 }
 
+-- 🧊 Glassmorphism Patch
+local Lighting = game:GetService("Lighting")
+local GlassBlur = Instance.new("BlurEffect")
+GlassBlur.Name = "OrionGlassBlur"
+GlassBlur.Size = 12
+GlassBlur.Parent = Lighting
+
+OrionLib.Themes.Glass = {
+	Main = Color3.fromRGB(255, 255, 255),
+	Second = Color3.fromRGB(240, 240, 240),
+	Stroke = Color3.fromRGB(255, 255, 255),
+	Divider = Color3.fromRGB(230, 230, 230),
+	Text = Color3.fromRGB(20, 20, 20),
+	TextDark = Color3.fromRGB(100, 100, 100)
+}
+OrionLib.SelectedTheme = "Glass"
+-- 🧊 Glassmorphism Patch  ▲▲▲
 
 local Icons = {}
 
